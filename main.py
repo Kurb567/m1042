@@ -21,7 +21,7 @@ def read_user_ids(filepath: str) -> list[int]:
     return user_ids
 
 
-async def send_to_user(bot: Bot, user_id: int, text: str) -> bool:
+async def send_to_user(bot, user_id, text):
     """Отправляет сообщение пользователю. Возвращает True при успехе."""
     try:
         await bot.send_message(chat_id=user_id, text=text)
@@ -39,7 +39,7 @@ async def send_to_user(bot: Bot, user_id: int, text: str) -> bool:
         return False
 
 
-async def broadcast(user_ids: list[int], text: str) -> None:
+async def broadcast(user_ids: list[int], text: str):
     """Рассылает сообщение всем пользователям из списка."""
     bot = Bot(token=BOT_TOKEN)
     success = 0
@@ -49,8 +49,7 @@ async def broadcast(user_ids: list[int], text: str) -> None:
         if await send_to_user(bot, uid, text):
             success += 1
         else:
-            failed += 1
-        await asyncio.sleep(0.05)  # небольшая задержка между отправками
+            failed += 1  # небольшая задержка между отправками
 
     print(f"\nРассылка завершена!")
     print(f"Успешно: {success}")
