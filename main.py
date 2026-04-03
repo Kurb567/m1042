@@ -9,8 +9,16 @@ USERS_FILE = "1.txt"
 
 def read_user_ids(filepath: str) -> list[int]:
     """Читает ID пользователей из файла (по одному на строку)."""
+    user_ids = []
     with open(filepath, "r", encoding="utf-8") as f:
-        return [int(line.strip()) for line in f if line.strip()]
+        for line in f:
+            line = line.strip()
+            if line:
+                try:
+                    user_ids.append(int(line))
+                except ValueError:
+                    pass
+    return user_ids
 
 
 async def send_to_user(bot: Bot, user_id: int, text: str) -> bool:
