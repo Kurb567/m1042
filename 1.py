@@ -2,7 +2,7 @@ import asyncio
 from aiogram import Bot
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
-BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"
+BOT_TOKEN = "8761010810:AAFTFsBV5KFqpF0M9JpGuMRdS28_cDoDUvw"
 
 
 async def main() -> None:
