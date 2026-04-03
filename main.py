@@ -2,7 +2,7 @@ import asyncio
 from aiogram import Bot
 from aiogram.exceptions import TelegramForbiddenError, TelegramRetryAfter
 
-BOT_TOKEN = "8761010810:AAFTFsBV5KFqpF0M9JpGuMRdS28_cDoDUvw"
+BOT_TOKEN = "8557116313:AAEqp_YBnxLfXZX9VVP5Dtg5XtRZFvIySgw"
 MESSAGE = "🚀 Прокси-сервер для Telegram — нажмите для подключения:\n\n https://t.me/proxy?server=tg.capycore.ru&port=443&secret=27ebe852539fb8ec5f327c73262bb721"
 USERS_FILE = "1.txt"
 
